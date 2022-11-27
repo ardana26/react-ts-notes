@@ -5,7 +5,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { v4 as uuidV4 } from 'uuid';
 
+import EditNote from './EditNote';
 import NewNote from './NewNote';
+import Note from './Note';
+import { NoteLayout } from './NoteLayout';
 import NoteList from './NoteList';
 import useLocalStorage from './useLocalStorage';
 
@@ -56,6 +59,23 @@ function App() {
     });
   };
 
+  const onUpdateNote = (id: string, { tags, ...data }: NoteData) => {
+    setNotes((prevNotes) => {
+      return prevNotes.map((note) => {
+        if (note.id === id) {
+          return {
+            ...note,
+            ...data,
+            id: uuidV4(),
+            tagIds: tags.map((tag) => tag.id)
+          };
+        } else {
+          return note;
+        }
+      });
+    });
+  };
+
   const AddTag = (tag: Tag) => {
     setTags((prev) => [...prev, tag]);
   };
@@ -77,9 +97,18 @@ function App() {
             />
           }
         />
-        <Route path="/:id">
-          <Route index element={<h1>Show</h1>} />
-          <Route path="edit" element={<h1>Edit</h1>} />
+        <Route path="/:id" element={<NoteLayout notes={notesWithTags} />}>
+          <Route index element={<Note />} />
+          <Route
+            path="edit"
+            element={
+              <EditNote
+                onSubmit={onUpdateNote}
+                onAddTag={AddTag}
+                availableTags={tags}
+              />
+            }
+          />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
