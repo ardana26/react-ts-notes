@@ -5,12 +5,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { v4 as uuidV4 } from 'uuid';
 
-import EditNote from './EditNote';
-import NewNote from './NewNote';
-import Note from './Note';
-import { NoteLayout } from './NoteLayout';
-import NoteList from './NoteList';
-import useLocalStorage from './useLocalStorage';
+import EditNote from './components/EditNote';
+import NewNote from './components/NewNote';
+import useLocalStorage from './hooks/useLocalStorage';
+import NoteList from './components/NoteList';
+import { NoteLayout } from './components/NoteLayout';
+import Note from './components/Note';
 
 export type Note = {
   id: string;

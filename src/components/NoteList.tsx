@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Button, Col, Form, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CreatableReactSelect from 'react-select/creatable';
-import { Note, Tag } from './App';
+import { Note, Tag } from '../App';
 import { EditTagsModal } from './EditTagsModal';
 import { NoteCard } from './NoteCard';
 

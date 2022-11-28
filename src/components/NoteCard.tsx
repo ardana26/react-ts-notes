@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Card, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Tag } from './App';
+import { Tag } from '../App';
 import styles from './NoteList.module.css';
 
 type SimplifiedNote = {
