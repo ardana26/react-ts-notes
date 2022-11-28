@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pretty": "prettier --write \"src/**/*.{js,tsx}\""
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
