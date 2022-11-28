@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { NoteData, Tag } from '../App';
 import NoteForm from './NoteForm';
 

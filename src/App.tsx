@@ -7,10 +7,10 @@ import { v4 as uuidV4 } from 'uuid';
 
 import EditNote from './components/EditNote';
 import NewNote from './components/NewNote';
-import useLocalStorage from './hooks/useLocalStorage';
-import NoteList from './components/NoteList';
-import { NoteLayout } from './components/NoteLayout';
 import Note from './components/Note';
+import { NoteLayout } from './components/NoteLayout';
+import NoteList from './components/NoteList';
+import useLocalStorage from './hooks/useLocalStorage';
 
 export type Note = {
   id: string;
